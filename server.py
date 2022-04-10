@@ -30,10 +30,15 @@ def plus2():
 
 @app.route('/incrementchoice', methods=['POST'])
 def chooseIncrement():
-    print('entered incrementchoice')
-    increment = int(request.form['increment']) - 1
-    session['count'] += increment
-    print(f'Session count: {session["count"]}')
+    if request.form['increment'] == "":
+        print('please enter an incremnting value')
+
+        return redirect ('/')
+    else :
+        print('entered incrementchoice')
+        increment = int(request.form['increment']) - 1
+        session['count'] += increment
+        print(f'Session count: {session["count"]}')
 
     return redirect ('/')
 
