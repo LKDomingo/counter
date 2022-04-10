@@ -9,12 +9,19 @@
 </head>
 <body>
     <div class="container"></div>
-    <h1 class="text-center">Counter</h1>
+    <h1 class="text-center">Session Counter</h1>
     <h3 class="text-center">{{ session['count'] }}</h3>
+    <h1 class="text-center">Real Counter</h1>
+    <h3 class="text-center">{{ session['realCount'] }}</h3>
     <div class="container d-flex justify-content-center">
         <a href="http://localhost:5000/plus2" class="text-center m-1">Plus 2</a>
         <a href="http://localhost:5000/destroy_session" class="text-center m-1">Clear</a>
     </div>
+    <form class=" d-flex justify-content-center" action="/incrementchoice" method="post">
+        <input type="number" name="increment">
+        <input type="submit" value="Submit">
+        
+    </form>
 
     </form>
 </body>
